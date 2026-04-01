@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loot RPG - Profissional</title>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<style>
+body {
+    margin:0;
+    font-family:Arial;
+    background:#1a1a1a;
+    color:#eee;
+}
+
+/* HEADER */
+header {
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+}
+
+/* TOPO */
+.topo {
+    display:flex;
+    justify-content:center;
+}
+
+/* GRID */
+.main-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* COLUNA DIREITA */
+.main-grid > div:last-child {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* BOX */
+.box {
+    background:#111;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* BOTÕES */
+button {
+    padding:10px 15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:3px;
+    background:#333;
+    color:#fff;
+    border:1px solid #555;
+}
+
+button:hover {
+    background:#555;
+}
+
+/* BOTÃO LIMPAR */
+.limpar-btn {
+    background:#550000;
+    border:1px solid #aa0000;
+}
+
+.limpar-btn:hover {
+    background:#aa0000;
+}
+
+/* INPUTS */
+input,select {
+    padding:6px;
+}
+
+/* RESULTADO */
+.result {
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* HISTÓRICO */
+textarea {
+    width:100%;
+    height:150px;
+    background:#000;
+    color:#0f0;
+    font-family:monospace;
+}
+
+/* TABELAS GRID */
+.tabelas-grid {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* BOTÕES TABELA */
+.tabela-btn {
+    padding:12px 20px;
+    font-weight:bold;
+    border:2px solid #aaa;
+    cursor:pointer;
+    min-width:120px;
+    text-align:center;
+}
+
+.tabela-btn.active {
+    border:2px solid #fff;
+    box-shadow:0 0 10px #fff;
+}
+
+/* CORES */
+.cobre { background:#6b3e1e; }
+.bronze { background:#a97142; }
+.prata { background:#aaa; color:#000; }
+.ouro { background:#ffd700; color:#000; }
+.platina { background:#00aaff; }
+.adamantina { background:#00cc66; }
+.mythril { background:#3366ff; }
+
+/* GRID DE UPLOAD */
+.upload-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* CAIXAS */
+.upload-box {
+    background: #1a1a1a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+/* TÍTULO */
+.upload-box h4 {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* CONTAINER GERAL */
+.upload-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
+/* LADO ESQUERDO */
+.upload-left {
+    min-width: 180px;
+}
+
+/* CARDS */
+.upload-cards {
+    display: flex;
+    gap: 20px;
+}
+
+/* CARD INDIVIDUAL */
+.upload-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    min-width: 260px;
+}
+
+/* TÍTULO */
+.upload-card h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* NOME DO ARQUIVO */
+.file-name {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* STATUS */
+.status {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.status.ok {
+    color: #00ff88;
+}
+
+.status.erro {
+    color: #ff4444;
+}
+
+.main-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:20px;
+    max-width:1200px;
+    margin:auto;
+    position:relative;
+}
+
+/* linha divisória */
+.main-grid::after {
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:1px;
+    background:#444;
+}
+
+.box {
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #222;
+    text-align:center;
+}
+
+.tabelas-grid {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.tabela-btn {
+    min-width:110px;
+    padding:10px;
+    border:2px solid #aaa;
+    font-weight:bold;
+}
+
+/* efeito visual mais forte */
+.tabela-btn.active {
+    border:2px solid #fff;
+    box-shadow:0 0 8px #fff;
+}
+
+.linha-acao {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+.result {
+    margin-top:20px;
+    font-size:20px;
+    text-align:center;
+}
+
+.result strong {
+    font-size:22px;
+}
+
+textarea {
+    width:100%;
+    height:180px;
+    background:#050505;
+    color:#0f0;
+    font-family:monospace;
+    border:1px solid #333;
+    padding:10px;
+}
+
+.box {
+    transition:0.2s;
+}
+
+.box:hover {
+    transform:scale(1.02);
+    box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<header>🎲 Loot RPG - Plano das Sombras</header>
+
+<div class="upload-container">
+
+    <!-- ESQUERDA -->
+    <div class="upload-left">
+        <h3>Importar Excel</h3>
+        <button id="btnCarregar" onclick="carregarExcel()">📥 Carregar Planilhas</button>
+    </div>
+
+    <!-- DIREITA -->
+    <div class="upload-cards">
+
+        <div class="upload-card">
+            <h4>📦 Tabelas Principais</h4>
+            <input type="file" id="excelMain" onchange="mostrarArquivo('excelMain','mainFileName')">
+            <span id="mainFileName" class="file-name">Nenhum arquivo</span>
+        </div>
+
+        <div class="upload-card">
+            <h4>🧩 Subtabelas</h4>
+            <input type="file" id="excelSub" onchange="mostrarArquivo('excelSub','subFileName')">
+            <span id="subFileName" class="file-name">Nenhum arquivo</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="statusUpload" class="status"></div>
+</div>
+</div>
+
+<div class="main-grid">
+
+<!-- ESQUERDA -->
+<div class="box">
+<h3>Tabelas</h3>
+
+<h4 id="tabelaAtual">Tabela: -</h4>
+
+<select id="tabelaSelect" style="display:none;"></select>
+<div id="tabelasBotoes" class="tabelas-grid"></div>
+
+<br>
+
+<button onclick="rolarDado()">🎲 Rolar d100</button>
+<input id="numero" type="number" min="1" max="100">
+<button onclick="buscarManual()">Buscar</button>
+
+<div id="resultado" class="result"></div>
+
+<h4>Histórico</h4>
+<button class="limpar-btn" onclick="limparHistorico('historico')">🧹 Limpar</button>
+<textarea id="historico"></textarea>
+</div>
+
+<!-- DIREITA -->
+<div>
+
+<div class="box">
+<h3>Subtabelas</h3>
+
+<select id="subSelect"></select>
+
+<br><br>
+
+<button onclick="rolarSub()">🎲 Rolar</button>
+<input id="subNumero" type="number">
+<button onclick="buscarSub()">Buscar</button>
+
+<div id="subResultado" class="result"></div>
+
+<h4>Histórico</h4>
+<button class="limpar-btn" onclick="limparHistorico('historicoSub')">🧹 Limpar</button>
+<textarea id="historicoSub"></textarea>
+</div>
+
+<div class="box">
+<h3>Ouro</h3>
+
+<input id="x" value="1" size="3"> d
+<select id="dado">
+<option>d4</option><option>d6</option><option>d8</option>
+<option>d10</option><option>d12</option><option>d20</option><option>d100</option>
+</select>
++ <input id="bonus" value="0" size="3">
+
+<br><br>
+
+<button onclick="rolarOuro()">Rolar</button>
+<div id="ouro" class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+let tabelas = {};
+let subtabelas = {};
+
+let mainLoaded=false, subLoaded=false;
+
+function checkLoad(){
+    if(mainLoaded && subLoaded){
+        atualizarSelects();
+        document.getElementById("resultado").innerText="✅ Planilhas carregadas";
+    }
+}
+
+function carregarExcel(){
+    const fileMain = document.getElementById("excelMain").files[0];
+    const fileSub = document.getElementById("excelSub").files[0];
+
+    if(!fileMain || !fileSub){
+        alert("Selecione os dois arquivos");
+        return;
+    }
+
+    const readerMain = new FileReader();
+    readerMain.onload = e=>{
+        const wb = XLSX.read(e.target.result,{type:"binary"});
+        wb.SheetNames.forEach(nome=>{
+            const sheet = XLSX.utils.sheet_to_json(wb.Sheets[nome]);
+            tabelas[nome]=sheet.map(l=>({
+                min:+l.Min,
+                max:+l.Max,
+                resultado:l.Resultado || l.resultado || ""
+            }));
+        });
+        mainLoaded=true;
+        checkLoad();
+    };
+    readerMain.readAsBinaryString(fileMain);
+
+    const readerSub = new FileReader();
+    readerSub.onload = e=>{
+        const wb = XLSX.read(e.target.result,{type:"binary"});
+        wb.SheetNames.forEach(nome=>{
+            const sheet = XLSX.utils.sheet_to_json(wb.Sheets[nome]);
+            subtabelas[nome]=sheet.map(l=>l.Resultado).filter(Boolean);
+        });
+        subLoaded=true;
+        checkLoad();
+    };
+    readerSub.readAsBinaryString(fileSub);
+}
+
+function mostrarArquivo(inputId, labelId){
+    const input = document.getElementById(inputId);
+    const label = document.getElementById(labelId);
+
+    if(input.files.length > 0){
+        label.innerText = input.files[0].name;
+        label.style.color = "#00ff88";
+    } else {
+        label.innerText = "Nenhum arquivo";
+        label.style.color = "#aaa";
+    }
+}
+
+function atualizarSelects(){
+    const container=document.getElementById("tabelasBotoes");
+    const tabelaSelect=document.getElementById("tabelaSelect");
+    const subSelect=document.getElementById("subSelect");
+
+    container.innerHTML="";
+    tabelaSelect.innerHTML="";
+    subSelect.innerHTML="";
+
+    Object.keys(tabelas).forEach((nome,i)=>{
+        let opt=new Option(nome,nome);
+        tabelaSelect.add(opt);
+
+        let btn=document.createElement("div");
+        btn.className="tabela-btn "+nome.toLowerCase().split(" ")[0];
+        btn.innerText=nome;
+
+        btn.onclick=()=>{
+            document.querySelectorAll(".tabela-btn").forEach(b=>b.classList.remove("active"));
+            btn.classList.add("active");
+            tabelaSelect.value=nome;
+            document.getElementById("tabelaAtual").innerText="Tabela: "+nome;
+        };
+
+        if(i===0){
+            btn.classList.add("active");
+            tabelaSelect.value=nome;
+        }
+
+        container.appendChild(btn);
+    });
+
+    Object.keys(subtabelas).forEach((nome,i)=>{
+        let opt=new Option(nome,nome);
+        subSelect.add(opt);
+        if(i===0) subSelect.value=nome;
+    });
+}
+
+function buscarResultado(valor){
+    let tabela=tabelas[document.getElementById("tabelaSelect").value];
+    if(!tabela) return "⚠️ Nenhuma tabela";
+    return tabela.find(l=>valor>=l.min && valor<=l.max)?.resultado || "Não encontrado";
+}
+
+function rolarDado(){
+    let n=Math.floor(Math.random()*100)+1;
+    document.getElementById("numero").value=n;
+    let r=buscarResultado(n);
+    document.getElementById("resultado").innerText=`🎲 ${n} → ${r}`;
+    addHistorico(`🎲 ${n} → ${r}`,"historico");
+}
+
+function buscarManual(){
+    let n=parseInt(document.getElementById("numero").value);
+    let r=buscarResultado(n);
+    document.getElementById("resultado").innerText=`🔎 ${n} → ${r}`;
+    addHistorico(`🔎 ${n} → ${r}`,"historico");
+}
+
+function rolarSub(){
+    let lista=subtabelas[document.getElementById("subSelect").value];
+    let n=Math.floor(Math.random()*lista.length);
+    let r=lista[n];
+    document.getElementById("subNumero").value=n+1;
+    document.getElementById("subResultado").innerText=r;
+    addHistorico(`🎲 ${n+1} → ${r}`,"historicoSub");
+}
+
+function buscarSub(){
+    let lista=subtabelas[document.getElementById("subSelect").value];
+    let n=parseInt(document.getElementById("subNumero").value)-1;
+    let r=lista[n];
+    document.getElementById("subResultado").innerText=r;
+    addHistorico(`🔎 ${n+1} → ${r}`,"historicoSub");
+}
+
+function rolarOuro(){
+    let x=+document.getElementById("x").value;
+    let d=+document.getElementById("dado").value.replace("d","");
+    let b=+document.getElementById("bonus").value;
+
+    let total=0, rolls=[];
+    for(let i=0;i<x;i++){
+        let r=Math.floor(Math.random()*d)+1;
+        rolls.push(r);
+        total+=r;
+    }
+
+    total+=b;
+
+    document.getElementById("ouro").innerText=
+        `💰 [${rolls.join(", ")}] + ${b} = ${total} PO`;
+}
+
+function addHistorico(texto,id){
+    let campo=document.getElementById(id);
+    let linhas=campo.value.split("\n");
+    linhas.unshift(texto);
+    campo.value=linhas.slice(0,50).join("\n");
+}
+
+function limparHistorico(id){
+    document.getElementById(id).value="";
+}
+</script>
+
+</body>
+</html>
