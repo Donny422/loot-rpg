@@ -296,12 +296,144 @@ textarea {
     transform:scale(1.02);
     box-shadow:0 0 15px rgba(255,255,255,0.1);
 }
+
+/* EFEITO SHADOWFELL */
+body {
+    margin:0;
+    font-family:'Cinzel', serif;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 80%);
+    color:#ddd;
+    overflow-x:hidden;
+}
+
+/* névoa animada */
+body::before {
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle, rgba(80,0,120,0.15) 0%, transparent 60%);
+    animation: fog 20s linear infinite;
+    z-index:-1;
+}
+
+@keyframes fog {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
+}
+
+header {
+    text-align:center;
+    padding:25px;
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#c084ff;
+    text-shadow:0 0 10px #6a00ff, 0 0 20px #3a0066;
+}
+
+.box {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border:1px solid #2a2a2a;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(100,0,150,0.2);
+    transition:0.3s;
+}
+
+.box:hover {
+    transform:scale(1.03);
+    box-shadow:0 0 25px rgba(140,0,255,0.5);
+}
+
+button {
+    background: linear-gradient(145deg, #2a003f, #14001f);
+    border:1px solid #5a00aa;
+    color:#fff;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+button:hover {
+    background:#5a00aa;
+    box-shadow:0 0 15px #7a00ff;
+}
+
+.result {
+    margin-top:20px;
+    font-size:22px;
+    color:#e0b3ff;
+    text-shadow:0 0 10px #8000ff;
+}
+
+textarea {
+    background:#050005;
+    color:#bb66ff;
+    border:1px solid #5500aa;
+    font-family:monospace;
+    padding:10px;
+    box-shadow:inset 0 0 10px #220033;
+}
+
+.tabela-btn {
+    border:2px solid #444;
+    background:#111;
+    color:#ccc;
+    transition:0.2s;
+}
+
+.tabela-btn:hover {
+    transform:scale(1.05);
+    box-shadow:0 0 10px #888;
+}
+
+.tabela-btn.active {
+    border:2px solid #c084ff;
+    box-shadow:0 0 15px #a855f7;
+    color:#fff;
+}
 </style>
 </head>
 
 <body>
 
 <header>🎲 Loot RPG - Plano das Sombras</header>
+
+<div class="upload-container">
+
+    <!-- ESQUERDA -->
+    <div class="upload-left">
+        <h3>Importar Excel</h3>
+        <button id="btnCarregar" onclick="carregarExcel()">📥 Carregar Planilhas</button>
+    </div>
+
+    <!-- DIREITA -->
+    <div class="upload-cards">
+
+        <div class="upload-card">
+            <h4>📦 Tabelas Principais</h4>
+            <input type="file" id="excelMain" onchange="mostrarArquivo('excelMain','mainFileName')">
+            <span id="mainFileName" class="file-name">Nenhum arquivo</span>
+        </div>
+
+        <div class="upload-card">
+            <h4>🧩 Subtabelas</h4>
+            <input type="file" id="excelSub" onchange="mostrarArquivo('excelSub','subFileName')">
+            <span id="subFileName" class="file-name">Nenhum arquivo</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="statusUpload" class="status"></div>
+</div>
+</div>
+
+<div class="main-grid">
+
 <!-- ESQUERDA -->
 <div class="box">
 <h3>Tabelas</h3>
@@ -370,6 +502,43 @@ let tabelas = {};
 let subtabelas = {};
 
 let mainLoaded=false, subLoaded=false;
+
+function checkLoad(){
+    if(mainLoaded && subLoaded){
+        atualizarSelects();
+        document.getElementById("resultado").innerText="✅ Planilhas carregadas";
+    }
+}
+
+async function carregarDados(){
+    try{
+        const resMain = await fetch("tabelas.json");
+        tabelas = await resMain.json();
+
+        const resSub = await fetch("subtabelas.json");
+        subtabelas = await resSub.json();
+
+        atualizarSelects();
+
+        document.getElementById("resultado").innerText="✅ Dados carregados automaticamente";
+    }catch(e){
+        console.error(e);
+        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
+    }
+}
+
+function mostrarArquivo(inputId, labelId){
+    const input = document.getElementById(inputId);
+    const label = document.getElementById(labelId);
+
+    if(input.files.length > 0){
+        label.innerText = input.files[0].name;
+        label.style.color = "#00ff88";
+    } else {
+        label.innerText = "Nenhum arquivo";
+        label.style.color = "#aaa";
+    }
+}
 
 function atualizarSelects(){
     const container=document.getElementById("tabelasBotoes");
