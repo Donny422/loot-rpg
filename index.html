@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loot RPG - Plano das Sombras</title>
 <audio id="diceSound" src="https://www.myinstants.com/media/sounds/dice-roll.mp3"></audio>
-
 <style>
 body {
     margin:0;
@@ -526,19 +525,10 @@ function buscarResultado(valor){
 }
 
 function rolarDado(){
-    let btn = document.querySelector("button");
-    btn.classList.add("rolling");
-
-    setTimeout(()=>btn.classList.remove("rolling"),400);
-
     let n=Math.floor(Math.random()*100)+1;
     document.getElementById("numero").value=n;
-
     let r=buscarResultado(n);
-
-    document.getElementById("resultado").innerHTML=
-        `🎲 <strong>${n}</strong><br>${r}`;
-
+    document.getElementById("resultado").innerText=`🎲 ${n} → ${r}`;
     addHistorico(`🎲 ${n} → ${r}`,"historico");
 }
 
