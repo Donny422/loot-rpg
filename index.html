@@ -301,9 +301,6 @@ textarea {
 
 <header>🎲 Loot RPG - Plano das Sombras</header>
 
-</div>
-</div>
-
 <div class="main-grid">
 
 <!-- ESQUERDA -->
@@ -480,7 +477,26 @@ function addHistorico(texto,id){
 function limparHistorico(id){
     document.getElementById(id).value="";
 }
+    
+async function carregarDados(){
+    try{
+        const resMain = await fetch("tabelas.json");
+        const resSub = await fetch("subtabelas.json");
 
+        if(!resMain.ok || !resSub.ok){
+            throw new Error("Erro ao carregar JSON");
+        }
+
+        tabelas = await resMain.json();
+        subtabelas = await resSub.json();
+
+        atualizarSelects();
+
+    }catch(e){
+        console.error(e);
+        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
+    }
+}
 window.onload = async () => {
     document.getElementById("resultado").innerText = "⏳ Carregando dados...";
 
