@@ -1,0 +1,786 @@
+{
+  "Cobre": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "90po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "2 Poções de cura simples"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "Tatoo Sintonizável Comum (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "3 Tatoo Consumivel Comum (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "Pergaminho de Feitiço Comum (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "Seed comum (Rolar Tabela)"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "Poção/Varinha Comum (Escolher)"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "10d8 + 50po"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "2 diamantes de 50po"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "1 Item Maravilhoso Comum (Escolher)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "Tattoo Sintonizavel Comum (Escolher)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "120po"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "10d8 + 50po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "Arma de Prata"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "Seed comum (Rolar tabela)"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "1 Item maravilhoso comum (Rolar tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "Poção comum (Rolar tabela)"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "Diamante de 100po"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "2 poções de cura simples"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "1 Item Maravilhoso Comum (Escolher)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "Medalha (Rolar Tabela)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "Arma Mágica Comum (Escolher)"
+    }
+  ],
+  "Bronze": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "180po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "4 Poções de cura simples"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "1 Tatoo Consumivel Incomum (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "5 Tatoo Consumivel Comum (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "Pergaminho de Feitiço Comum/Incomum (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "13d12 + 150po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "Poção Incomum Menor (Rolar Tabela)"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "Armadura Magica comum (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "3 Poções Comuns (Rolar Tabela)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "2 Itens Maravilhosos Comuns (Escolher)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "240po"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "Anel ou Varinha Incomun Menor (Escolher)"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "Arma de Prata"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "13d12 + 150po"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "Gema 200po"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "Poção de Cura Maior"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "Pergaminho de Feitiço Incomum (Escolher)"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "Tatuagem Mágica Incomum Consumivel (Escolher)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "2 Itens Maravilhosos Comuns (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "5 Tatoo Consumivel Comum (Escolher)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "4 Poções de cura simples"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "Arma Mágica Comum (Escolher)"
+    }
+  ],
+  "Prata": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "340po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "2 Poções de Cura Maior"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "3 Tatto Sintonizavél Comuns (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "4 Pergaminho de Feitiço Comuns (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "2 Pergaminho 1 Comum e 1 Incomum (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "20d20 + 200po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "1 Item Maravilhoso Incomum Menor (Rolar Tabela)"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "Poção Rara Menor (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "2 Poções de Resistência (Escolher)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "Philter Raro Menor (Rolar Tabela)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "2 Poções Incomuns Menor (Rolar Tabela)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "Sending Stones"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "440po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "Bag of Holding"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "Diamante de 300Po"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "Seed Uncommom Menor (Rolar Tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "Vinho Raro Menor (Rolar Tabela)"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "2 armas magicas comuns (Rolar Tabela)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "1 Item Maravilhoso Incomum Menor (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "Manto de Itens Úteis"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "4 Pergaminho de Feitiço Comuns (Rolar Tabela)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "Diamante 500po"
+    }
+  ],
+  "Ouro": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "495po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "2 Poções de Cura Superior"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "5 Tatuagens Incomuns (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "1 Poção Rara Maior (Rolar Tabela)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "1 Pergaminho de Feitiço Raro ou Proteção (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "35d20 + 300po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "2 Seeds incomuns Menor (Rolar Tabela)"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "1 Item maravilhoso Incomum menor (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "Armadura magica Incomum Menor (Rolar Tabela)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "2 Diamantes de 300"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "Arma de Fogo + 20 munições mágicas (Rolar Tabela)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "2 tatuagens consumiveis incomuns (Escolher)"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "660po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "35d20 + 300po"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "Diamante de 500Po"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "1 Poção rara Maior (Rolar Tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "Armadura magica Incomum Menor (Rolar Tabela)"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "2 Pergaminhos de Feitiço Incomuns (Escolher)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "2 Itens Maravilhosos Incomuns Menor (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "3 poções Incomuns Menor (Rolar Tabela)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "2 tatuagens Incomuns Consumiveis (Escolher)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "1 Item Maravilhoso Incomuns Maior (Escolher)"
+    }
+  ],
+  "Platina": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "690po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "3 Poções Raras Menor (Rolar Tabela)"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "Tatoo Sintonizável Incomum (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "Weapon of Grass (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "2 Pergaminho de Feitiço Raro (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "Glowstone Helmet"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "Arma Magica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "Arma Quickstep (Escolher)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "Gemas até 1000po"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "920po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "Arma Lunar (Escolher)"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "4 poções Incomuns (Rolar Tabela)"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "Tatuagem magica rara (Consumivel) (Escolher)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "Arma Mágica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "2 Pergaminhos de Proteção (Escolher)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "1 Item Maravilhoso Incomum Maior (Escolher)"
+    }
+  ],
+  "Adamantina": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "690po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "3 Poções Raras Menor (Rolar Tabela)"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "Tatoo Sintonizável Incomum (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "Weapon of Grass (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "2 Pergaminho de Feitiço Raro (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "Glowstone Helmet"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "Arma Magica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "Arma Quickstep (Escolher)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "Gemas até 1000po"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "920po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "Arma Lunar (Escolher)"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "4 poções Incomuns (Rolar Tabela)"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "Tatuagem magica rara (Consumivel) (Escolher)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "Arma Mágica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "2 Pergaminhos de Proteção (Escolher)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "1 Item Maravilhoso Incomum Maior (Escolher)"
+    }
+  ],
+  "Mythril": [
+    {
+      "min": 1,
+      "max": 4,
+      "resultado": "690po"
+    },
+    {
+      "min": 5,
+      "max": 9,
+      "resultado": "3 Poções Raras Menor (Rolar Tabela)"
+    },
+    {
+      "min": 10,
+      "max": 14,
+      "resultado": "Tatoo Sintonizável Incomum (Escolher)"
+    },
+    {
+      "min": 15,
+      "max": 19,
+      "resultado": "Weapon of Grass (Escolher)"
+    },
+    {
+      "min": 20,
+      "max": 24,
+      "resultado": "2 Pergaminho de Feitiço Raro (Escolher)"
+    },
+    {
+      "min": 25,
+      "max": 30,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "resultado": "Glowstone Helmet"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "resultado": "Arma Magica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "resultado": "Arma Quickstep (Escolher)"
+    },
+    {
+      "min": 51,
+      "max": 54,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 55,
+      "max": 58,
+      "resultado": "Gemas até 1000po"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "resultado": "920po"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "resultado": "Arma Lunar (Escolher)"
+    },
+    {
+      "min": 63,
+      "max": 66,
+      "resultado": "4 poções Incomuns (Rolar Tabela)"
+    },
+    {
+      "min": 67,
+      "max": 72,
+      "resultado": "Moonstone Banded Armor (Rolar Tabela)"
+    },
+    {
+      "min": 73,
+      "max": 77,
+      "resultado": "40d20 + 500po"
+    },
+    {
+      "min": 78,
+      "max": 82,
+      "resultado": "Tatuagem magica rara (Consumivel) (Escolher)"
+    },
+    {
+      "min": 83,
+      "max": 89,
+      "resultado": "Arma Mágica Incomum (Rolar Tabela)"
+    },
+    {
+      "min": 90,
+      "max": 93,
+      "resultado": "2 Pergaminhos de Proteção (Escolher)"
+    },
+    {
+      "min": 94,
+      "max": 98,
+      "resultado": "Armadura Magica Incomum Maior (Rolar Tabela)"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "resultado": "1 Item Maravilhoso Incomum Maior (Escolher)"
+    }
+  ]
+}

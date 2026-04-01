@@ -412,42 +412,21 @@ function checkLoad(){
     }
 }
 
-function carregarExcel(){
-    const fileMain = document.getElementById("excelMain").files[0];
-    const fileSub = document.getElementById("excelSub").files[0];
+async function carregarDados(){
+    try{
+        const resMain = await fetch("tabelas.json");
+        tabelas = await resMain.json();
 
-    if(!fileMain || !fileSub){
-        alert("Selecione os dois arquivos");
-        return;
+        const resSub = await fetch("subtabelas.json");
+        subtabelas = await resSub.json();
+
+        atualizarSelects();
+
+        document.getElementById("resultado").innerText="✅ Dados carregados automaticamente";
+    }catch(e){
+        console.error(e);
+        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
     }
-
-    const readerMain = new FileReader();
-    readerMain.onload = e=>{
-        const wb = XLSX.read(e.target.result,{type:"binary"});
-        wb.SheetNames.forEach(nome=>{
-            const sheet = XLSX.utils.sheet_to_json(wb.Sheets[nome]);
-            tabelas[nome]=sheet.map(l=>({
-                min:+l.Min,
-                max:+l.Max,
-                resultado:l.Resultado || l.resultado || ""
-            }));
-        });
-        mainLoaded=true;
-        checkLoad();
-    };
-    readerMain.readAsBinaryString(fileMain);
-
-    const readerSub = new FileReader();
-    readerSub.onload = e=>{
-        const wb = XLSX.read(e.target.result,{type:"binary"});
-        wb.SheetNames.forEach(nome=>{
-            const sheet = XLSX.utils.sheet_to_json(wb.Sheets[nome]);
-            subtabelas[nome]=sheet.map(l=>l.Resultado).filter(Boolean);
-        });
-        subLoaded=true;
-        checkLoad();
-    };
-    readerSub.readAsBinaryString(fileSub);
 }
 
 function mostrarArquivo(inputId, labelId){
@@ -568,6 +547,8 @@ function addHistorico(texto,id){
 function limparHistorico(id){
     document.getElementById(id).value="";
 }
+
+window.onload = carregarDados;
 </script>
 
 </body>
