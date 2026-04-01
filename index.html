@@ -371,43 +371,6 @@ let subtabelas = {};
 
 let mainLoaded=false, subLoaded=false;
 
-function checkLoad(){
-    if(mainLoaded && subLoaded){
-        atualizarSelects();
-        document.getElementById("resultado").innerText="✅ Planilhas carregadas";
-    }
-}
-
-async function carregarDados(){
-    try{
-        const resMain = await fetch("tabelas.json");
-        tabelas = await resMain.json();
-
-        const resSub = await fetch("subtabelas.json");
-        subtabelas = await resSub.json();
-
-        atualizarSelects();
-
-        document.getElementById("resultado").innerText="✅ Dados carregados automaticamente";
-    }catch(e){
-        console.error(e);
-        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
-    }
-}
-
-function mostrarArquivo(inputId, labelId){
-    const input = document.getElementById(inputId);
-    const label = document.getElementById(labelId);
-
-    if(input.files.length > 0){
-        label.innerText = input.files[0].name;
-        label.style.color = "#00ff88";
-    } else {
-        label.innerText = "Nenhum arquivo";
-        label.style.color = "#aaa";
-    }
-}
-
 function atualizarSelects(){
     const container=document.getElementById("tabelasBotoes");
     const tabelaSelect=document.getElementById("tabelaSelect");
