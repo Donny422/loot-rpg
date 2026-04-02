@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loot RPG - Profissional</title>
 
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-
 <style>
+    
+.upload-container {
+    display:none;
+}
+    
 body {
     margin:0;
     font-family:Arial;
@@ -401,37 +404,6 @@ textarea {
 
 <header>🎲 Loot RPG - Plano das Sombras</header>
 
-<div class="upload-container">
-
-    <!-- ESQUERDA -->
-    <div class="upload-left">
-        <h3>Importar Excel</h3>
-        <button id="btnCarregar" onclick="carregarExcel()">📥 Carregar Planilhas</button>
-    </div>
-
-    <!-- DIREITA -->
-    <div class="upload-cards">
-
-        <div class="upload-card">
-            <h4>📦 Tabelas Principais</h4>
-            <input type="file" id="excelMain" onchange="mostrarArquivo('excelMain','mainFileName')">
-            <span id="mainFileName" class="file-name">Nenhum arquivo</span>
-        </div>
-
-        <div class="upload-card">
-            <h4>🧩 Subtabelas</h4>
-            <input type="file" id="excelSub" onchange="mostrarArquivo('excelSub','subFileName')">
-            <span id="subFileName" class="file-name">Nenhum arquivo</span>
-        </div>
-
-    </div>
-
-</div>
-
-<div id="statusUpload" class="status"></div>
-</div>
-</div>
-
 <div class="main-grid">
 
 <!-- ESQUERDA -->
@@ -502,43 +474,6 @@ let tabelas = {};
 let subtabelas = {};
 
 let mainLoaded=false, subLoaded=false;
-
-function checkLoad(){
-    if(mainLoaded && subLoaded){
-        atualizarSelects();
-        document.getElementById("resultado").innerText="✅ Planilhas carregadas";
-    }
-}
-
-async function carregarDados(){
-    try{
-        const resMain = await fetch("tabelas.json");
-        tabelas = await resMain.json();
-
-        const resSub = await fetch("subtabelas.json");
-        subtabelas = await resSub.json();
-
-        atualizarSelects();
-
-        document.getElementById("resultado").innerText="✅ Dados carregados automaticamente";
-    }catch(e){
-        console.error(e);
-        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
-    }
-}
-
-function mostrarArquivo(inputId, labelId){
-    const input = document.getElementById(inputId);
-    const label = document.getElementById(labelId);
-
-    if(input.files.length > 0){
-        label.innerText = input.files[0].name;
-        label.style.color = "#00ff88";
-    } else {
-        label.innerText = "Nenhum arquivo";
-        label.style.color = "#aaa";
-    }
-}
 
 function atualizarSelects(){
     const container=document.getElementById("tabelasBotoes");
@@ -645,7 +580,27 @@ function addHistorico(texto,id){
 function limparHistorico(id){
     document.getElementById(id).value="";
 }
+    
+async function carregarDados(){
+    try{
+        const resMain = await fetch("tabelas.json");
+        const resSub = await fetch("subtabelas.json");
 
+        if(!resMain.ok || !resSub.ok){
+            throw new Error("Erro ao carregar JSON");
+        }
+
+        tabelas = await resMain.json();
+        subtabelas = await resSub.json();
+
+        atualizarSelects();
+
+    }catch(e){
+        console.error(e);
+        document.getElementById("resultado").innerText="❌ Erro ao carregar dados";
+    }
+}
+    
 window.onload = carregarDados;
 </script>
 
