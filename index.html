@@ -395,13 +395,37 @@ textarea {
     box-shadow:0 0 15px #a855f7;
     color:#fff;
 }
+
+.logo-guilda {
+    position:fixed;
+    top:10px;
+    right:20px;
+    width:90px;
+
+    z-index:999;
+
+    filter: drop-shadow(0 0 10px red)
+            drop-shadow(0 0 20px #ff0000);
+
+    transition:0.3s;
+}
+
+.logo-guilda:hover {
+    transform:scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 15px red)
+            drop-shadow(0 0 30px #ff0000);
+}
+
+header {
+    padding-right:120px;
+}
 </style>
 </head>
 
 <body>
 
 <header>🎲 Loot RPG - Plano das Sombras</header>
-
+<img src="logo.png" class="logo-guilda">
 <div class="main-grid">
 
 <!-- ESQUERDA -->
