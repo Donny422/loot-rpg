@@ -145,14 +145,53 @@ textarea {
 }
 
 /* CORES */
-.cobre { background:#6b3e1e; }
-.bronze { background:#a97142; }
-.prata { background:#aaa; }
-.ouro { background:#ffd700; }
-.platina { background:#00aaff; }
-.adamantina { background:#00cc66; }
-.mythril { background:#3366ff; }
+.cobre {
+    background: linear-gradient(145deg, #4a2408, #c27a3a);
+    color:#000 !important;
+    box-shadow: 0 0 10px #7a4a2a;
+}
+.bronze {
+    background: linear-gradient(145deg, #d4843d, #ffde90);
+    color:#000 !important;
+    box-shadow: 0 0 10px #8a5a30;
+}
+.prata {
+    background: linear-gradient(145deg, #6e6e6e, #e8e8e8);
+    color:#000 !important;
+    box-shadow: 0 0 10px #cfcfcf;
+}
+.ouro {
+    background: linear-gradient(145deg, #9c7a00, #ffe066);
+    color:#000 !important;
+    box-shadow: 0 0 12px #ffd700;
+}
+.platina {
+    background: linear-gradient(145deg, #004c88, #7fd1ff);
+    color:#000 !important;
+    box-shadow: 0 0 12px #00c8ff;
+}
+.adamantina {
+    background: linear-gradient(145deg, #0f4f00, #63e13d);
+    color:#000 !important;
+    box-shadow: 0 0 12px #38ff00;
+}
+.mythril {
+    background: linear-gradient(145deg, #001f7a, #5aa8ff);
+    color:#000 !important;
+    box-shadow: 0 0 12px #3fa9ff;
+}
 
+.tabela-btn:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+}
+
+.tabela-btn.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px currentColor;
+    border:2px solid #fff;
+}
+    
 /* GRID DE UPLOAD */
 .upload-grid {
     display: flex;
