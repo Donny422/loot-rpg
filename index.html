@@ -439,7 +439,15 @@ textarea {
     box-shadow:0 0 15px #a855f7;
     color:#fff;
 }
+/* PULSAR BRILHO */
+.tabela-btn.active {
+    animation: glowPulse 2s infinite alternate;
+}
 
+@keyframes glowPulse {
+    from { box-shadow: 0 0 10px currentColor; }
+    to { box-shadow: 0 0 25px currentColor; }
+}
 /* LOGO */
 .logo-guilda {
     position:fixed;
